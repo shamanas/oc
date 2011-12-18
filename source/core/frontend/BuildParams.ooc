@@ -66,7 +66,7 @@ BuildParams: class {
         if(verbose > 0) "Should locate position of oc. Self = %s" printfln(self)
         selfFile := File new(self)
         
-        if(selfFile exists?()) {
+        if(selfFile exists?() && selfFile file?()) {
             // okay so we have a direct path to the exec - let's back out of bin/
             guess1 := selfFile getAbsoluteFile() parent() parent()
             if(verbose > 0) "Guess from direct path is %s" printfln(guess1 path)
